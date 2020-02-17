@@ -1,28 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Employee {
-    private String name;
-    private String dept;
-    private int salary;
-    private List<Employee> subordinates;
-
+public class Employee extends Person{
     public Employee(String name, String dept, int salary) {
-        this.name = name;
-        this.dept = dept;
-        this.salary = salary;
-        subordinates = new ArrayList<Employee>();
+        super(name, dept, salary);
     }
-    public void add(Employee employee){
-        subordinates.add(employee);
+
+    @Override
+    public void add(Person employee) {
+        super.add(employee);
     }
-    public void remove(Employee e){
-        subordinates.remove(e);
+
+    @Override
+    public void remove(Employee e) {
+        super.remove(e);
     }
-    public List<Employee> getSubordinates(){
-        return subordinates;
+
+    @Override
+    public List<Person> getSubordinates() {
+        return super.getSubordinates();
     }
-    public String toString(){
-        return ("Employe: [ Name: "+name+ " dept : "+dept+ ", salary: "+ salary+"]");
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
